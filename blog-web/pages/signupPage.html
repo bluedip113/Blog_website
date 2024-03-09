@@ -3,73 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
     <title>SignUp Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:  #3C6E71;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+}
+
+.title {
+    font-size: 1.875rem;
+    font-weight: bold;
+    color: #ffff;
+}
+
+.description {
+    font-size: 1.125rem;
+    color: #d5d8db;
+    font-weight: bolder;
+}
+
+.signup-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+.form-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 34px;
+    text-align: center;
+}
+
+.form-label {
+    font-size: 1rem;
+    font-weight: lighter;
+}
+
+.form-input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #3C6E71;
+    color: #fff;
+    margin-bottom: 7px;
+}
+
+.btn-primary:hover {
+    background-color: #1e494d;
+}
+
+.btn-secondary {
+    background-color: #9ca3af;
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background-color: #6b7280;
+}
+
+    </style>
 </head>
 <body>
-    <div class="bg-white py-24 sm:py-32" style="padding-top: 20px; box-shadow: 2px 1px 2px #eee; padding-bottom: 20px; background-color:rgb(56, 61, 150);">
-        <div class="mx-auto max-w-7xl px-6 lg:px-8">
-          <div class="mx-auto max-w-2xl lg:mx-0">
-            <h2 style="color: aliceblue;" class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Blog Website</h2>
-            <p style="color: aliceblue;" class="mt-2 text-lg leading-8 text-gray-600">Express to the world.</p>
-          </div>
+    <div class="container">
+        <div class="header">
+            <h2 class="title">ExpressEcho</h2>
+            <p class="description">"Rhythm of Words, Harmony of Ideas"</p>
         </div>
-    </div>
-    <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
-        <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-            <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-                Sign up here!
-            </h2>
-        </div>
-
-        <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+        <div class="signup-form">
+            <h2 class="form-title">Sign up!</h2>
             <form class="space-y-6" action="/signup" method="post">
                 <!-- first name -->
                 <div>
-                    <label for="fname" class="block text-sm font-medium leading-6 text-gray-900">First Name</label>
-                    <div class="mt-2">
-                        <input id="fname" name="fname" type="text" required
-                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
-                    </div>
+                    <label for="fname" class="form-label">First Name</label>
+                    <input id="fname" name="fname" type="text" required class="form-input" />
                 </div>
-
                 <div>
-                    <label for="lname" class="block text-sm font-medium leading-6 text-gray-900">Last Name</label>
-                    <div class="mt-2">
-                        <input id="lname" name="lname" type="text" required
-                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
-                    </div>
+                    <label for="lname" class="form-label">Last Name</label>
+                    <input id="lname" name="lname" type="text" required class="form-input" />
                 </div>
-
                 <div>
-                    <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
-                    <div class="mt-2">
-                        <input id="email" name="email" type="email" required
-                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
-                    </div>
+                    <label for="email" class="form-label">Email address</label>
+                    <input id="email" name="email" type="email" required class="form-input" />
                 </div>
-
                 <div>
-                    <div class="flex items-center justify-between">
-                        <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
-                    </div>
-                    <div class="mt-2">
-                        <input id="password" name="password" type="password" required
-                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
-                    </div>
+                    <label for="password" class="form-label">Password</label>
+                    <input id="password" name="password" type="password" required class="form-input" />
                 </div>
-
-                <div>
-                    <button type="submit"
-                        class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                        Sign Up
-                    </button>
-                </div>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
             </form>
-            <button type="submit" id="login" style="margin-top: 10px;"
-                        class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                        Login here
-                    </button>
+            <button type="button" id="login" class="btn btn-secondary">Login here</button>
         </div>
     </div>
     <script>

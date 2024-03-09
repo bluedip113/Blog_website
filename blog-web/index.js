@@ -1,10 +1,13 @@
+
+
+
 const express = require("express");
 const mongoose = require("mongoose");
 const session = require("express-session");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb+srv://kelly:sJxU6rcZqMqOoAzT@cluster0.r9gbeuc.mongodb.net/";
+const MONGODB_URI = process.env.MONGODB_URI || "<YOUR_MONGOATLAS_URI>";
 
 app.use('/images',express.static('images'));
 app.use(express.urlencoded({ extended: true }));
@@ -63,7 +66,7 @@ app.get("/home", isAuthenticated, async (req, res) => {
         array.reverse();
         let posts = "";
         array.forEach((element) => {
-            posts += `<article class="flex max-w-xl flex-col items-start justify-between" style="border: 2px solid black; padding: 10%; border-radius: 5%; transition: transform 0.3s ease-in-out;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+            posts += `<article class="flex max-w-xl flex-col items-start justify-between" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  padding: 10%; border-radius: 5%; transition: transform 0.3s ease-in-out;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
             <div class="flex items-center gap-x-4 text-xs">
               <time datetime="2020-03-16" class="text-gray-500">${element.date} ${element.time}</time>
             </div>
